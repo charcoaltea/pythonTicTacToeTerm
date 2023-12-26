@@ -150,11 +150,11 @@ def main():
         computer_prev_move = [4, 4]
         player_prev_move = [4, 4]
         while winner == ' ' and check_free_spaces() != 0:
+            if winner != ' ' or check_free_spaces() == 0:
+                break
             computer_move()
             #computer_move(computer_prev_move, player_prev_move)
             winner = check_winner()
-            if winner != ' ' or check_free_spaces() == 0:
-                break
             print_board()
             player_move(computer_prev_move, player_prev_move)
             winner = check_winner()
